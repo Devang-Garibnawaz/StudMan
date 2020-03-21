@@ -1,16 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
+<!--  Old theme Style
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    Replaced with material theme
+    -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorRed</item>
+        <item name="colorPrimaryDark">@color/colorRed</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.default" parent="PayumoneyAppTheme">
+        <item name="colorPrimary">@color/colorRed</item>
+        <item name="colorPrimaryDark">@color/colorRed</item>
+        <item name="colorAccent">@color/colorRed</item>
+        <item name="colorButtonNormal">@color/colorRed</item>
+        <item name="alertDialogTheme">@style/AlertDialogStyle_Default</item>
+        <item name="actionMenuTextColor">@color/white</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

@@ -52,13 +52,13 @@
      />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/insitite_mailto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/icon_apply"
+        app:srcCompat="@drawable/mail_icon"
         android:backgroundTint="@color/white"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

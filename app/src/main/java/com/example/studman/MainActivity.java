@@ -1,18 +1,23 @@
 package com.example.studman;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.android.volley.RequestQueue;
 
 public class MainActivity extends AppCompatActivity {
 
     //declarations
-    Button btn,btn2,btnInstitutes,btnCourses;
+
+    CardView btnIns, btnCourses, btnMaterials,btnExams,btnProfile;
     RequestQueue queue;
 
 
@@ -23,16 +28,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn = (Button) findViewById(R.id.btnID);
-        btn2 = (Button) findViewById(R.id.button);
-        btnInstitutes = (Button) findViewById(R.id.btn_institutes);
-        btnCourses = (Button) findViewById(R.id.btn_courses);
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        }
+
+
+        btnIns = (CardView)  findViewById(R.id.btn_ins);
+        btnCourses = (CardView) findViewById(R.id.btn_courses);
+        btnMaterials = (CardView) findViewById(R.id.btn_material);
+        btnExams = (CardView) findViewById(R.id.btn_exam);
+        btnProfile = (CardView) findViewById(R.id.btn_account);
 
         //go to institutes
 
-        btnInstitutes.setOnClickListener(new View.OnClickListener() {
+        btnIns.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),Institutes.class);
                 startActivity(i);
             }
@@ -48,18 +59,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        //go to login
-
-        btn2.setOnClickListener(new View.OnClickListener() {
+        //go to Materials
+        btnMaterials.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),login.class);
-                startActivity(i);
+                startActivity(new Intent(getApplicationContext(),Materials.class));
+            }
+        });
+
+        //Go to exams
+        btnExams.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Exams.class));
+            }
+        });
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Fee.class));
             }
         });
 
 
+    }
 
-        }
+
+
     }

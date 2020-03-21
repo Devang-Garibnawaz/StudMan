@@ -3,19 +3,24 @@
     package="com.example.studman">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher_main"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_main_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="false">
+        <activity android:name=".Fee"></activity>
+        <activity android:name=".Exams" />
+        <activity android:name=".Materials" />
         <activity
             android:name=".CourseDetail"
             android:label="@string/title_activity_course_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".InstituteDetail"
             android:label="@string/title_activity_institute_detail"
