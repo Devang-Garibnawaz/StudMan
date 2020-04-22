@@ -28,7 +28,6 @@ import java.util.ArrayList;
 public class Courses extends AppCompatActivity {
 
     public static final String URL = "https://www.leancerweb.com/studman/course/index.php";
-    RecyclerView rv;
     ProgressBar insLoading;
     EditText txtCourse;
     Course[] courses;
